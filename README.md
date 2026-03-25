@@ -1,6 +1,6 @@
 # It-s-ok-not-to-be-ok
 
-# 🌿 Mental Wellness Web App
+# 🌿It's ok not to be ok Mental Wellness Web App
 
 A responsive and interactive **Mental Health Support Platform** designed to help users relax, express emotions, and access wellness resources in a simple and engaging way.
 
