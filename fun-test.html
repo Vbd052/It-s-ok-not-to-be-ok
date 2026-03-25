@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Test: How Are You Feeling?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffe0e0, #e0f7fa);
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            animation: fadeIn 0.5s;
+        }
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            position: relative;
+        }
+        .question::before {
+            content: '🤔';
+            position: absolute;
+            left: -40px;
+            font-size: 2em;
+            animation: bounce 0.5s infinite alternate;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .option {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .option:hover {
+            background: #ffeb3b;
+            transform: scale(1.05);
+        }
+        .selected {
+            background: #ffeb3b;
+            border: 2px solid #ff6f61;
+        }
+        .submit-button, .explore-button {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: #ff4d40;
+        }
+        .explore-button {
+            margin-top: 15px;
+            background: #345C3A;
+        }
+        .explore-button:hover {
+            background: #2c4f33;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        #emoji-container {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How Are You Feeling?</h1>
+        <p>Let's find out in a fun way! Choose your answers and see how your mood is doing.</p>
+
+        <div class="question">
+            <p>1. How often do you feel like a superhero?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">🦸 Almost never</div>
+                <div class="option" onclick="selectOption(this, 1)">🤔 Sometimes</div>
+                <div class="option" onclick="selectOption(this, 2)">😓 Often</div>
+                <div class="option" onclick="selectOption(this, 3)">😩 Almost always</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. When you wake up, how do you feel?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">🌞 Ready to conquer the world!</div>
+                <div class="option" onclick="selectOption(this, 1)">😴 A bit sleepy but manageable</div>
+                <div class="option" onclick="selectOption(this, 2)">😩 Ugh, do I have to?</div>
+                <div class="option" onclick="selectOption(this, 3)">😴 Can I just sleep forever?</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. How do you feel about social gatherings?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">🎉 I love them!</div>
+                <div class="option" onclick="selectOption(this, 1)">😊 They're fun sometimes.</div>
+                <div class="option" onclick="selectOption(this, 2)">🙈 I'd rather stay in.</div>
+                <div class="option" onclick="selectOption(this, 3)">😨 I avoid them like the plague.</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. How often do you feel anxious or worried?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">😌 Almost never</div>
+                <div class="option" onclick="selectOption(this, 1)">😬 Sometimes</div>
+                <div class="option" onclick="selectOption(this, 2)">😟 Often</div>
+                <div class="option" onclick="selectOption(this, 3)">😱 All the time</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. How would you rate your stress level today?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">😌 Not stressed at all</div>
+                <div class="option" onclick="selectOption(this, 1)">😅 A little stressed</div>
+                <div class="option" onclick="selectOption(this, 2)">😟 Quite stressed</div>
+                <div class="option" onclick="selectOption(this, 3)">😱 Extremely stressed</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. How often do you feel supported by friends or family?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">❤️ Always</div>
+                <div class="option" onclick="selectOption(this, 1)">😊 Most of the time</div>
+                <div class="option" onclick="selectOption(this, 2)">😕 Sometimes</div>
+                <div class="option" onclick="selectOption(this, 3)">😢 Rarely</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. How often do you engage in physical activity?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">🏃 Daily</div>
+                <div class="option" onclick="selectOption(this, 1)">🚶 A few times a week</div>
+                <div class="option" onclick="selectOption(this, 2)">😐 Rarely</div>
+                <div class="option" onclick="selectOption(this, 3)">🚫 Never</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. How satisfied are you with your work or studies?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">😃 Very satisfied</div>
+                <div class="option" onclick="selectOption(this, 1)">🙂 Somewhat satisfied</div>
+                <div class="option" onclick="selectOption(this, 2)">😕 Neutral</div>
+                <div class="option" onclick="selectOption(this, 3)">😩 Not satisfied</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. How often do you take time for self-care?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">💆 Regularly</div>
+                <div class="option" onclick="selectOption(this, 1)">😊 Occasionally</div>
+                <div class="option" onclick="selectOption(this, 2)">😐 Rarely</div>
+                <div class="option" onclick="selectOption(this, 3)">🚫 Never</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. How do you feel about your current life situation?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 0)">🌈 Very positive</div>
+                <div class="option" onclick="selectOption(this, 1)">🙂 Somewhat positive</div>
+                <div class="option" onclick
+                ="selectOption(this, 2)">😐 Neutral</div>
+                <div class="option" onclick="selectOption(this, 3)">😟 Very negative</div>
+            </div>
+        </div>
+
+        <button class="submit-button" onclick="calculateResults()">See Results!</button>
+
+        <div id="result" style="display: none; margin-top: 20px;">
+            <h2>Your Results:</h2>
+            <p id="result-text"></p>
+            <p id="suggestion-text"></p>
+        </div>
+        
+        <div id="emoji-container" style="display: none;">
+            <p id="result-emoji"></p>
+        </div>
+        
+        <button class="explore-button" onclick="window.location.href='explore.html'">Explore Resources</button>
+    </div>
+
+    <script>
+        let totalScore = 0;
+
+        function selectOption(selectedElement, score) {
+            const options = selectedElement.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('selected');
+            }
+            selectedElement.classList.add('selected');
+            totalScore += score;
+        }
+
+        function calculateResults() {
+            let resultText = '';
+            let suggestionText = '';
+            let emoji = '';
+
+            if (totalScore <= 10) {
+                resultText = "You're doing great! Keep shining!";
+                suggestionText = "Continue engaging in activities you love, and maybe try something new!";
+                emoji = "😊"; // Happy emoji
+            } else if (totalScore <= 20) {
+                resultText = "You're feeling a bit stressed. Take some time for self-care!";
+                suggestionText = "Consider relaxation techniques like yoga, meditation, or a fun outing!";
+                emoji = "😌"; // Relaxed emoji
+            } else if (totalScore <= 30) {
+                resultText = "It sounds like you might need some support. Don't hesitate to reach out!";
+                suggestionText = "Talk to someone you trust or explore mindfulness apps to help ease your thoughts.";
+                emoji = "😟"; // Concerned emoji
+            } else {
+                resultText = "You may be experiencing significant distress. It's important to seek help.";
+                suggestionText = "Please consider talking to a mental health professional for support.";
+                emoji = "😢"; // Sad emoji
+            }
+
+            document.getElementById('result-text').innerText = resultText;
+            document.getElementById('suggestion-text').innerText = suggestionText;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('emoji-container').style.display = 'block';
+            document.getElementById('result-emoji').innerText = emoji;
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9f5e9;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #345C3A;
+}
+
+.header {
+    background-color: #d2e8d0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Explore Section Styles */
+.explore-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.explore-option {
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    width: 250px; /* Fixed width for boxes */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 3px solid transparent; /* Default border for hover effect */
+}
+
+/* Individual Explore Option Background Colors */
+.explore-option:nth-child(1) {
+    background-color: #ffebcd; /* Blanched Almond */
+}
+
+.explore-option:nth-child(2) {
+    background-color: #ffe4e1; /* Misty Rose */
+}
+
+.explore-option:nth-child(3) {
+    background-color: #f0fff0; /* Honeydew */
+}
+
+.explore-option:nth-child(4) {
+    background-color: #e6e6fa; /* Lavender */
+}
+
+.explore-option:nth-child(5) {
+    background-color: #f5f5dc; /* Beige */
+}
+
+.explore-option:nth-child(6) {
+    background-color: #d8bfd8; /* Thistle */
+}
+
+.explore-option:nth-child(7) {
+    background-color: #ffe4b5; /* Light Goldenrod Yellow */
+}
+
+.explore-option:nth-child(8) {
+    background-color: #faf0e6; /* Linen */
+}
+
+/* Hover Effect for Explore Options */
+.explore-option:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    border-color: #345C3A; /* Highlight border on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.footer {
+    background-color: #345C3A;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer nav a {
+    margin: 0 10px;
+}
+
+.footer nav a:hover {
+    text-decoration: underline;
+}
+style.css

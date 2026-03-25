@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Mental Wellness Resources">
+    <title>Explore Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffccff, #ffcc99, #99ccff, #ccffcc);
+            background-size: 400% 400%;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: gradientBackground 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 5px solid rgba(255, 255, 255, 0.7);
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .explore-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex-grow: 1;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        .explore-option {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #345C3A;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            width: 220px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-option:nth-child(odd) {
+            background-color: #ffe0e0; /* Light pink */
+        }
+
+        .explore-option:nth-child(even) {
+            background-color: #e0f7fa; /* Light blue */
+        }
+
+        .explore-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .explore-option i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #345C3A;
+        }
+
+        /* Colorful pop-up message styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff7eb9, #ffb4a2);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+        }
+
+        .popup h2 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #fff;
+        }
+
+        .popup p {
+            margin: 10px 0 0;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 40px;
+            pointer-events: none;
+            animation: floatUp 2s ease-in forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Explore Mental Wellness Resources</h1>
+        <p>Choose an option that brings you joy! 🌈</p>
+    </header>
+
+    <!-- Explore Options Section -->
+    <section class="explore-section">
+        <div class="explore-option" onclick="popEmojis('games.html')">
+            <i class="fas fa-gamepad"></i> 🎮
+            <h2>Fun Games</h2>
+            <p>Engage your mind with playful challenges!</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('talk.html')">
+            <i class="fas fa-comments"></i> 🗣️
+            <h2>Chat & Connect</h2>
+            <p>Share your thoughts and meet new friends!</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('yoga.html')">
+            <i class="fas fa-person-biking"></i> 🧘‍♀️
+            <h2>Relaxing Yoga</h2>
+            <p>Unwind with guided yoga sessions.</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('counseling.html')">
+            <i class="fas fa-user-md"></i> 💬
+            <h2>Counseling Support</h2>
+            <p>Get personalized help when you need it.</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('motivational.html')">
+            <i class="fas fa-video"></i> 🎥
+            <h2>Inspiring Videos</h2>
+            <p>Boost your spirit with uplifting content!</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('music.html')">
+            <i class="fas fa-music"></i> 🎶
+            <h2>Soothing Music</h2>
+            <p>Relax with calming soundscapes.</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('mindfulness.html')">
+            <i class="fas fa-spa"></i> 🧘
+            <h2>Mindfulness</h2>
+            <p>Find peace through meditation.</p>
+        </div>
+        <div class="explore-option" onclick="popEmojis('art.html')">
+            <i class="fas fa-paint-brush"></i> 🎨
+            <h2>Creative Art</h2>
+            <p>Express yourself through creativity!</p>
+        </div>
+    </section>
+
+    <!-- Colorful pop-up message -->
+    <div class="popup" id="welcomePopup">
+        <h2>It's Okay!</h2>
+        <p>Take a deep breath and relax. 😊</p>
+    </div>
+
+    <script>
+        // Show pop-up on page load
+        window.onload = function() {
+            const popup = document.getElementById('welcomePopup');
+            popup.style.opacity = 1; // Make it visible
+
+            // Hide pop-up after 10 seconds
+            setTimeout(() => {
+                popup.style.opacity = 0; // Fade out
+            }, 5000); // Display for 10 seconds
+        };
+
+        function popEmojis(redirectUrl) {
+            const emojiCount = 50; // Number of emojis to show
+            for (let i = 0; i < emojiCount; i++) {
+                createSmileEmoji();
+            }
+
+            // Redirect after the emojis have finished
+            setTimeout(() => {
+                window.location.href = redirectUrl;
+            }, 2500); // Adjust time for emoji display
+        }
+
+        function createSmileEmoji() {
+            const emojiElement = document.createElement('div');
+            emojiElement.className = 'emoji';
+            emojiElement.innerText = '😊';
+            emojiElement.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            document.body.appendChild(emojiElement);
+
+            // Remove the emoji after animation
+            setTimeout(() => {
+                emojiElement.remove();
+            }, 2000); // Match this with the floatUp animation duration
+        }
+    </script>
+</body>
+</html>

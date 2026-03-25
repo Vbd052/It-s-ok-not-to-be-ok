@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxing Yoga Routine</title>
+    <style>
+        .yoga-instruction {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .yoga-instruction h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .yoga-instruction p {
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .yoga-instruction ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .yoga-instruction li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .yoga-instruction h3 {
+            color: #2980b9;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1a6b98;
+        }
+    </style>
+</head>
+<body>
+
+<div class="yoga-instruction">
+    <h2>Relaxing Yoga Routine</h2>
+    <p>Take a moment to breathe deeply and find your center. Follow these gentle poses to relax your mind and body.</p>
+    <ul>
+        <li>
+            <h3>1. Child's Pose</h3>
+            <p>Begin on your hands and knees, then sit back on your heels, stretching your arms forward. Breathe deeply and hold for 5 breaths.</p>
+            <button onclick="playAudio('childs-pose')">Play Instruction</button>
+            <audio id="childs-pose" src="path/to/childs-pose.mp3"></audio>
+        </li>
+        <li>
+            <h3>2. Cat-Cow Stretch</h3>
+            <p>On all fours, inhale as you arch your back (Cow), and exhale as you round your spine (Cat). Repeat for 5 cycles.</p>
+            <button onclick="playAudio('cat-cow')">Play Instruction</button>
+            <audio id="cat-cow" src="path/to/cat-cow.mp3"></audio>
+        </li>
+        <li>
+            <h3>3. Forward Fold</h3>
+            <p>Stand tall and slowly fold forward, letting your head and arms hang. Breathe and hold for 5 breaths.</p>
+            <button onclick="playAudio('forward-fold')">Play Instruction</button>
+            <audio id="forward-fold" src="path/to/forward-fold.mp3"></audio>
+        </li>
+        <li>
+            <h3>4. Legs-Up-The-Wall Pose</h3>
+            <p>Lie on your back and extend your legs up against a wall. Relax here for 5-10 minutes, focusing on your breath.</p>
+            <button onclick="playAudio('legs-up-wall')">Play Instruction</button>
+            <audio id="legs-up-wall" src="path/to/legs-up-wall.mp3"></audio>
+        </li>
+        <li>
+            <h3>5. Savasana (Corpse Pose)</h3>
+            <p>Lie flat on your back with arms at your sides. Close your eyes and breathe deeply. Stay here for at least 5 minutes.</p>
+            <button onclick="playAudio('savasana')">Play Instruction</button>
+            <audio id="savasana" src="path/to/savasana.mp3"></audio>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function playAudio(audioId) {
+        const audio = document.getElementById(audioId);
+        audio.currentTime = 0; // Reset audio to start
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
